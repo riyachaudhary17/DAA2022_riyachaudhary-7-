@@ -1,0 +1,126 @@
+Code-1
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+      string s;
+      cin>>s;
+      int a[26]={0};
+      for(int i = 0 ; s[i]!='\0';i++)
+      {
+            a[s[i]-97]++;
+      }
+      char c=97;
+      int max = INT_MIN;
+      int index = -1;
+      for(int i = 0 ; i<26;i++)
+      {
+           if(max>a[i])
+           {
+               continue;
+           }
+           else if(max<a[i])
+           {
+               max=a[i] ;
+              
+           }
+          
+      }
+      for(int i = 0 ; i<26;i++)
+        {
+            c = 97;
+            if(max == a[i])
+            {
+                index=i;
+                 c=c+index;
+                 cout<<c<<"="<<max; 
+
+                
+            }
+        }
+     
+
+}
+Code-2
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,i,k,j,temp,sum;
+    cout<<"enter number of elements in an array"<<endl;
+    cin>>n;
+    int a[n];
+    cout<<"enter elements of an array"<<endl;
+    for(i=0;i<n;i++)
+    cin>>a[i];
+    cout<<"enter the key element"<<endl;
+    cin>>k;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-i;j++)
+            if(a[j]>a[j+1])
+        {
+            temp=a[j];
+            a[j]=a[j+1];
+            a[j+1]=temp;
+        }
+    }
+    i=0;
+    j=n-1;
+    while(((sum)!=k)&&(i!=n-1)&&(j!=0))
+    {
+      sum=a[i]+a[j];
+      if(sum>k)
+        j--;
+      if(sum<k)
+        i++;
+
+    }
+    if((i==(n-1))||(j==0))
+        cout<<"no such element exist";
+    else
+    {
+        cout<<"element are "<<a[i]<<" and"<<a[j];
+    }
+
+
+
+
+}
+
+Code-3
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,m,i,j;
+    cout<<"enter size of array1"<<endl;
+    cin>>n;
+    cout<<"enter size of array2"<<endl;
+    cin>>m;
+    int a[n];
+    int b[m];
+    cout<<"enter the elements of array1"<<endl;
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+      cout<<"enter the elements of array2"<<endl;
+    for(i=0;i<m;i++)
+    {
+        cin>>b[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+            {
+              if(a[i]==b[j])
+                {
+                    cout<<a[i]<<endl;
+                }
+
+            }
+    }
+
+
+}
